@@ -1,5 +1,6 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
   import {
     getAuth,
     createUserWithEmailAndPassword,
@@ -9,12 +10,13 @@
 
   // Your web app's Firebase configuration
   const firebaseConfig = {
-    apiKey: "AIzaSyCxHg49e-IJto3hQvVp3sZ4ikAh5BC-zTQ",
-    authDomain: "module-2-t-all.firebaseapp.com",
-    projectId: "module-2-t-all",
-    storageBucket: "module-2-t-all.appspot.com",
-    messagingSenderId: "105200600055",
-    appId: "1:105200600055:web:fa378da333fae09f3d24f2"
+    apiKey: "AIzaSyCu45aMvlcA5Qua8hh8yKsYI-DuG7liouw",
+    authDomain: "website-787a4.firebaseapp.com",
+    projectId: "website-787a4",
+    storageBucket: "website-787a4.appspot.com",
+    messagingSenderId: "1087356050968",
+    appId: "1:1087356050968:web:35619c600ae1ce781dad6d",
+    measurementId: "G-7MCHX7BKCS"
   };
 
   // Initialize Firebase
@@ -23,13 +25,14 @@
 
 
 var fullName = document.getElementById("fullname");
+var contact = document.getElementById("contact");
 var email = document.getElementById("email");
 var password = document.getElementById("password");
 var copassword = document.getElementById("copassword")
 window.signup = function (e) {
 if(password)
 
-    if(fullName.value == "" ||  email.value =="" || password.value ==""){
+    if(fullName.value == "" || contact.value=="" || email.value =="" || password.value ==""){
         alert("All Field Are Required")
     }
     if(password.value == copassword.value){
@@ -43,6 +46,7 @@ if(password)
     e.preventDefault();
     var obj = {
       firstName: fullName.value,
+      contact: contact.value,
       email: email.value,
       password: password.value,
     };
